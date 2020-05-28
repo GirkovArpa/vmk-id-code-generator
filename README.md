@@ -4,4 +4,6 @@
 
 The homoglyphs I, O, l, and 0 are excluded.
 
+Screenshot:
+
 ![Image from Imgur](https://i.imgur.com/8OtjX2n.png)
