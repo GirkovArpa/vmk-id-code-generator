@@ -18,11 +18,13 @@ const generateKey = function () {
 const generateKeys = function () {
   for (let i = 0; i < 100; i++) {
     for (let j = 0; j < 100; j++) {
-      keys.push(generateKey());
+      let key = generateKey();
+      keys.push(key);
     }
     console.log(`${i + 1}%`);
   }
 }
 
 generateKeys();
+
 postMessage(keys);

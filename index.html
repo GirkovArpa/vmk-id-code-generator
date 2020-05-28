@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <header>
   <title></title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </header>
 
 <body>
+  <div class="center">
+    <div class="select-button" onclick="myFunction()"></div>
+  </div>
   <textarea id='textarea'></textarea>
-  <button onclick="myFunction()">Click me!</button>
+
   <script>
     'use strict';
 
@@ -15,7 +19,7 @@
       myWorker.onmessage = msg => {
         textarea.innerHTML = msg.data.join('\n');
         textarea.select();
-        textarea.setSelectionRange(0, 99999);
+        textarea.setSelectionRange(0, 999999);
         document.execCommand('copy');
       };
     }
