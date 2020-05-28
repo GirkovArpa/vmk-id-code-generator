@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<header>
+  <title></title>
+</header>
+
+<body>
+  <textarea id='textarea'></textarea>
+  <button onclick="myFunction()">Click me!</button>
+  <script>
+    'use strict';
+
+    const generateCerealKey = function () {
+      const chars = 'abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+      let key = 'VMK-';
+      for (let i = 0; i < 9; i++) {
+        if (i == 4) {
+          key += '-';
+          continue;
+        }
+        key += chars[~~(Math.random() * chars.length)];
+      }
+      return key;
+    }
+
+    const myFunction = function () {
+      let textarea = document.getElementById('textarea');
+      textarea.select();
+      console.log(generateCerealKey());
+      for (let i = 0; i < 100; i++) {
+        for (let j = 0; j < 100; j++) {
+          textarea.innerHTML += generateCerealKey() + '\n';
+        }
+      console.log(`${i + 1}%`);
+      }
+      textarea.select();
+      textarea.setSelectionRange(0, 999999);
+      document.execCommand('copy');
+    }
+  </script>
+</body>
+
+</html>
